@@ -22,17 +22,17 @@ class Program
         // In Main the first methode to run is the one that reads the marketdata 
         // for the file (euriborCurve = LoadMarketData("euribor_curve.txt");)
         var curves = new Dictionary<string, List<Instrument>>(); 
-        curves["euribor"] = LoadMarketData("euribor_curve.txt");
-        curves["ois"] = LoadMarketData("ois_curve.txt");
+        curves["eur"] = LoadMarketData("eur_swap_curve.txt");
+        curves["usd"] = LoadMarketData("usd_swap_curve.txt");
         
         // Thereafter the methode to calculate the zero curve is called
-        BuildZeroCurveNoOutput(curves["euribor"]);
-        BuildZeroCurveNoOutput(curves["ois"]);
+        BuildZeroCurve(curves["eur"]);
+        BuildZeroCurve(curves["usd"]);
 
         // Thereafter the results are plotted
         Console.WriteLine("Maturity\tZeroRate");
         //zeroDict = curves["Euribor"].ToDictionary(curves => curves.Maturity, curves => curves.ZeroRate);
-        var oisZeroCurve = curves["ois"].ToDictionary(col => col.Maturity, col => col.DiscountFactor);
+        var oisZeroCurve = curves["eur"].ToDictionary(col => col.Maturity, col => col.ZeroRate);
         foreach (var z in oisZeroCurve)
         {
             Console.WriteLine($"{z.Key}\t\t{z.Value:P4}");
@@ -69,7 +69,7 @@ class Program
     }
 
     // Function to build the zero curve from the list of instruments
-     static void BuildZeroCurveNoOutput(List<Instrument> instruments)
+     static void BuildZeroCurve(List<Instrument> instruments)
     {
         var zeroRates = new Dictionary<double, double>();
         var discountFactors = new Dictionary<double, double>();
