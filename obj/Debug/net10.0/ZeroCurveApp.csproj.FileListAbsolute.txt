@@ -1,0 +1,17 @@
+C:\Users\frank\OneDrive\C#\yieldcurveproject\ZeroCurveApp\bin\Debug\net10.0\ZeroCurveApp.exe
+C:\Users\frank\OneDrive\C#\yieldcurveproject\ZeroCurveApp\bin\Debug\net10.0\ZeroCurveApp.deps.json
+C:\Users\frank\OneDrive\C#\yieldcurveproject\ZeroCurveApp\bin\Debug\net10.0\ZeroCurveApp.runtimeconfig.json
+C:\Users\frank\OneDrive\C#\yieldcurveproject\ZeroCurveApp\bin\Debug\net10.0\ZeroCurveApp.dll
+C:\Users\frank\OneDrive\C#\yieldcurveproject\ZeroCurveApp\bin\Debug\net10.0\ZeroCurveApp.pdb
+C:\Users\frank\OneDrive\C#\yieldcurveproject\ZeroCurveApp\bin\Debug\net10.0\MathNet.Numerics.dll
+C:\Users\frank\OneDrive\C#\yieldcurveproject\ZeroCurveApp\obj\Debug\net10.0\ZeroCurveApp.csproj.AssemblyReference.cache
+C:\Users\frank\OneDrive\C#\yieldcurveproject\ZeroCurveApp\obj\Debug\net10.0\ZeroCurveApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\frank\OneDrive\C#\yieldcurveproject\ZeroCurveApp\obj\Debug\net10.0\ZeroCurveApp.AssemblyInfoInputs.cache
+C:\Users\frank\OneDrive\C#\yieldcurveproject\ZeroCurveApp\obj\Debug\net10.0\ZeroCurveApp.AssemblyInfo.cs
+C:\Users\frank\OneDrive\C#\yieldcurveproject\ZeroCurveApp\obj\Debug\net10.0\ZeroCurveApp.csproj.CoreCompileInputs.cache
+C:\Users\frank\OneDrive\C#\yieldcurveproject\ZeroCurveApp\obj\Debug\net10.0\ZeroCurv.1225C89B.Up2Date
+C:\Users\frank\OneDrive\C#\yieldcurveproject\ZeroCurveApp\obj\Debug\net10.0\ZeroCurveApp.dll
+C:\Users\frank\OneDrive\C#\yieldcurveproject\ZeroCurveApp\obj\Debug\net10.0\refint\ZeroCurveApp.dll
+C:\Users\frank\OneDrive\C#\yieldcurveproject\ZeroCurveApp\obj\Debug\net10.0\ZeroCurveApp.pdb
+C:\Users\frank\OneDrive\C#\yieldcurveproject\ZeroCurveApp\obj\Debug\net10.0\ZeroCurveApp.genruntimeconfig.cache
+C:\Users\frank\OneDrive\C#\yieldcurveproject\ZeroCurveApp\obj\Debug\net10.0\ref\ZeroCurveApp.dll
