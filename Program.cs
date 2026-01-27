@@ -8,7 +8,9 @@ using MathNet.Numerics.Interpolation;
 class Instrument
 {
     public double Maturity { get; set; }
-    public double Rate { get; set; }
+    public double SwapRate { get; set; }
+    public double DiscountFactor { get; set; }
+    public double ZeroRate { get; set; }
 }
 
 // When one calls "dotnet run" the main program is started. Where void means nothing 
@@ -24,11 +26,13 @@ class Program
         curves["ois"] = LoadMarketData("ois_curve.txt");
         
         // Thereafter the methode to calculate the zero curve is called
-        var euriborZeroCurve = BuildZeroCurve(curves["euribor"]);
-        var oisZeroCurve = BuildZeroCurve(curves["ois"]);
+        BuildZeroCurveNoOutput(curves["euribor"]);
+        BuildZeroCurveNoOutput(curves["ois"]);
 
         // Thereafter the results are plotted
         Console.WriteLine("Maturity\tZeroRate");
+        //zeroDict = curves["Euribor"].ToDictionary(curves => curves.Maturity, curves => curves.ZeroRate);
+        var oisZeroCurve = curves["ois"].ToDictionary(col => col.Maturity, col => col.DiscountFactor);
         foreach (var z in oisZeroCurve)
         {
             Console.WriteLine($"{z.Key}\t\t{z.Value:P4}");
@@ -57,7 +61,7 @@ class Program
             list.Add(new Instrument
             {
                 Maturity = double.Parse(parts[0], CultureInfo.InvariantCulture),
-                Rate = double.Parse(parts[1], CultureInfo.InvariantCulture)
+                SwapRate = double.Parse(parts[1], CultureInfo.InvariantCulture)
             });
         }
 
@@ -65,7 +69,7 @@ class Program
     }
 
     // Function to build the zero curve from the list of instruments
-    static Dictionary<double, double> BuildZeroCurve(List<Instrument> instruments)
+     static void BuildZeroCurveNoOutput(List<Instrument> instruments)
     {
         var zeroRates = new Dictionary<double, double>();
         var discountFactors = new Dictionary<double, double>();
@@ -73,7 +77,7 @@ class Program
         foreach (var inst in instruments)
         {
             double T = inst.Maturity;
-            double r = inst.Rate;
+            double r = inst.SwapRate;
 
             // Simpele jaarlijkse compounding: DF = 1/(1+r)^T
             double df = 1.0 / Math.Pow(1.0 + r, T);
@@ -82,12 +86,11 @@ class Program
             double zero = Math.Pow(df, -1.0 / T) - 1.0;
 
             discountFactors[T] = df;
-            zeroRates[T] = zero;
+                 
+            // Store the zero rates in the instrument for potential further use
+            inst.DiscountFactor = double.Parse(df.ToString(CultureInfo.InvariantCulture), CultureInfo.InvariantCulture);
+            inst.ZeroRate = double.Parse(zero.ToString(CultureInfo.InvariantCulture), CultureInfo.InvariantCulture);
         }
 
-        return zeroRates;
     }
-
-    // Function to build the zero curve from the list of instruments
-    //static
 }
