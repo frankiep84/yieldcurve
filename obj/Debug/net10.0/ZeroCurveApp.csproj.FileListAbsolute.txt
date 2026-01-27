@@ -15,3 +15,4 @@ C:\Users\frank\OneDrive\C#\yieldcurveproject\ZeroCurveApp\obj\Debug\net10.0\refi
 C:\Users\frank\OneDrive\C#\yieldcurveproject\ZeroCurveApp\obj\Debug\net10.0\ZeroCurveApp.pdb
 C:\Users\frank\OneDrive\C#\yieldcurveproject\ZeroCurveApp\obj\Debug\net10.0\ZeroCurveApp.genruntimeconfig.cache
 C:\Users\frank\OneDrive\C#\yieldcurveproject\ZeroCurveApp\obj\Debug\net10.0\ref\ZeroCurveApp.dll
+C:\Users\frank\OneDrive\C#\yieldcurveproject\ZeroCurveApp\obj\Debug\net10.0\ZeroCurveApp.sourcelink.json

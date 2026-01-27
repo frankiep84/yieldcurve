@@ -18,15 +18,18 @@ class Program
     static void Main()
     {
         // In Main the first methode to run is the one that reads the marketdata 
-        // fro the file
-        var instruments = LoadMarketData("euribor_curve.txt");
+        // for the file (euriborCurve = LoadMarketData("euribor_curve.txt");)
+        var curves = new Dictionary<string, List<Instrument>>(); 
+        curves["euribor"] = LoadMarketData("euribor_curve.txt");
+        curves["ois"] = LoadMarketData("ois_curve.txt");
         
         // Thereafter the methode to calculate the zero curve is called
-        var zeroCurve = BuildZeroCurve(instruments);
+        var euriborZeroCurve = BuildZeroCurve(curves["euribor"]);
+        var oisZeroCurve = BuildZeroCurve(curves["ois"]);
 
         // Thereafter the results are plotted
         Console.WriteLine("Maturity\tZeroRate");
-        foreach (var z in zeroCurve)
+        foreach (var z in oisZeroCurve)
         {
             Console.WriteLine($"{z.Key}\t\t{z.Value:P4}");
         }
