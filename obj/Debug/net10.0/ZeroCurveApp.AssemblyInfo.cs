@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ZeroCurveApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+141530c3f046b0deb6a23b55f8453086712f6e4b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8530e52ff8f95a1195910189268c67da067091c3")]
 [assembly: System.Reflection.AssemblyProductAttribute("ZeroCurveApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ZeroCurveApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

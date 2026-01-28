@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\frank\\OneDrive\\C#\\yieldcurveproject\\ZeroCurveApp\\ZeroCurveApp.csproj": {}
+    "C:\\Users\\frank\\OneDrive\\C#\\yieldcurveproject\\ZeroCurveApp\\ZeroCurveApp.csproj": {}
   },
   "projects": {
-    "c:\\Users\\frank\\OneDrive\\C#\\yieldcurveproject\\ZeroCurveApp\\ZeroCurveApp.csproj": {
+    "C:\\Users\\frank\\OneDrive\\C#\\yieldcurveproject\\ZeroCurveApp\\ZeroCurveApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\frank\\OneDrive\\C#\\yieldcurveproject\\ZeroCurveApp\\ZeroCurveApp.csproj",
+        "projectUniqueName": "C:\\Users\\frank\\OneDrive\\C#\\yieldcurveproject\\ZeroCurveApp\\ZeroCurveApp.csproj",
         "projectName": "ZeroCurveApp",
-        "projectPath": "c:\\Users\\frank\\OneDrive\\C#\\yieldcurveproject\\ZeroCurveApp\\ZeroCurveApp.csproj",
+        "projectPath": "C:\\Users\\frank\\OneDrive\\C#\\yieldcurveproject\\ZeroCurveApp\\ZeroCurveApp.csproj",
         "packagesPath": "C:\\Users\\frank\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\frank\\OneDrive\\C#\\yieldcurveproject\\ZeroCurveApp\\obj\\",
+        "outputPath": "C:\\Users\\frank\\OneDrive\\C#\\yieldcurveproject\\ZeroCurveApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\frank\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -30,16 +30,17 @@ class Program
         BuildZeroCurve(curves["usd"]);
 
         // Call interpolation routine
-        var targetMaturities = new List<double> { 0.25, 0.5, 1, 2, 3, 4, 5, 7, 10, 15, 20, 30 };
+        //var targetMaturities = new List<double> {0.25, 0.5, 1, 2, 3, 4, 5, 7, 10, 15, 20, 30 };
+        var targetMaturities = Enumerable.Range(1, 30).Select(i => (double)i).ToList();
         var newCurve = InterpolateCurve(curves["eur"], targetMaturities);
  
         // Thereafter the results are plotted
         Console.WriteLine("Maturity\tZeroRate");
         //zeroDict = curves["Euribor"].ToDictionary(curves => curves.Maturity, curves => curves.ZeroRate);
-        var oisZeroCurve = curves["eur"].ToDictionary(col => col.Maturity, col => col.ZeroRate);
-        foreach (var z in oisZeroCurve)
+        //var oisZeroCurve = curves["eur"].ToDictionary(col => col.Maturity, col => col.ZeroRate);
+        foreach (var z in newCurve)
         {
-            Console.WriteLine($"{z.Key}\t\t{z.Value:P4}");
+            Console.WriteLine($"{z.Maturity}\t\t{z.ZeroRate:P4}");
         }
     }
 
