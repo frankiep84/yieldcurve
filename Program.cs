@@ -42,6 +42,9 @@ class Program
         {
             Console.WriteLine($"{z.Maturity}\t\t{z.ZeroRate:P4}");
         }
+
+        // Finally the results are written to a text file
+        WriteMarketData("output.txt", newCurve);
     }
 
     // Function to read the text file into a list of instruments
@@ -71,6 +74,20 @@ class Program
         }
 
         return list;
+    }
+
+    // Function to write market data to a text file
+    static void WriteMarketData(string file, List<Instrument> instruments)
+    {
+        using var writer = new StreamWriter(file);
+        foreach (var inst in instruments)
+        {
+            string line =
+                inst.Maturity.ToString(CultureInfo.InvariantCulture) + "," +
+                inst.SwapRate.ToString(CultureInfo.InvariantCulture);
+
+            writer.WriteLine(line);
+        }
     }
 
     // Function to build the zero curve from the list of instruments
@@ -108,6 +125,7 @@ class Program
         {
             double rate = InterpolateZeroRate(originalCurve, m);
 
+            // For now the discountfactor and swaprate are set equal to the zero rate
             result.Add(new Instrument
             {
                 Maturity = m,
