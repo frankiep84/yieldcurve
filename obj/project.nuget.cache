@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "q3hDjmRpibE=",
+  "dgSpecHash": "C62iXnuXObE=",
   "success": true,
-  "projectFilePath": "c:\\Users\\frank\\OneDrive\\C#\\yieldcurveproject\\ZeroCurveApp\\ZeroCurveApp.csproj",
+  "projectFilePath": "C:\\Users\\frank\\OneDrive\\C#\\yieldcurveproject\\ZeroCurveApp\\ZeroCurveApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\frank\\.nuget\\packages\\csvhelper\\33.1.0\\csvhelper.33.1.0.nupkg.sha512",
     "C:\\Users\\frank\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512"

@@ -92,11 +92,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\frank\\OneDrive\\C#\\yieldcurveproject\\ZeroCurveApp\\ZeroCurveApp.csproj",
+      "projectUniqueName": "c:\\Users\\frank\\OneDrive\\C#\\yieldcurveproject\\ZeroCurveApp\\ZeroCurveApp.csproj",
       "projectName": "ZeroCurveApp",
-      "projectPath": "C:\\Users\\frank\\OneDrive\\C#\\yieldcurveproject\\ZeroCurveApp\\ZeroCurveApp.csproj",
+      "projectPath": "c:\\Users\\frank\\OneDrive\\C#\\yieldcurveproject\\ZeroCurveApp\\ZeroCurveApp.csproj",
       "packagesPath": "C:\\Users\\frank\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\frank\\OneDrive\\C#\\yieldcurveproject\\ZeroCurveApp\\obj\\",
+      "outputPath": "c:\\Users\\frank\\OneDrive\\C#\\yieldcurveproject\\ZeroCurveApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\frank\\AppData\\Roaming\\NuGet\\NuGet.Config"
