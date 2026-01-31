@@ -16,3 +16,4 @@ C:\Users\frank\OneDrive\C#\yieldcurveproject\ZeroCurveApp\obj\Debug\net10.0\Zero
 C:\Users\frank\OneDrive\C#\yieldcurveproject\ZeroCurveApp\obj\Debug\net10.0\ZeroCurveApp.genruntimeconfig.cache
 C:\Users\frank\OneDrive\C#\yieldcurveproject\ZeroCurveApp\obj\Debug\net10.0\ref\ZeroCurveApp.dll
 C:\Users\frank\OneDrive\C#\yieldcurveproject\ZeroCurveApp\obj\Debug\net10.0\ZeroCurveApp.sourcelink.json
+C:\Users\frank\OneDrive\C#\yieldcurveproject\ZeroCurveApp\bin\Debug\net10.0\CsvHelper.dll

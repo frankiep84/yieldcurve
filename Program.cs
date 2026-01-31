@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using MathNet.Numerics.Interpolation;
+using CsvHelper; // For this I wrote in the terminal "dotnet add package CsvHelper"
+using CsvHelper.Configuration;
+using Microsoft.VisualBasic;
 
-// Class om een instrument (looptijd + rate) op te slaan
+// Class to save a dummy instrument (maturity + rate)
 class Instrument
 {
     public double Maturity { get; set; }
@@ -12,6 +15,47 @@ class Instrument
     public double DiscountFactor { get; set; }
     public double ZeroRate { get; set; }
 }
+
+// Class to read historical yield curves for liquid points
+// Potentially public class instead of class. With public class everywhere available otherwise only 
+// within the same project/assembly.
+class YieldCurve
+{
+    public DateTime Date { get; set; }
+    public double Y1 { get; set; }
+    public double Y2 { get; set; }
+    public double Y3 { get; set; }
+    public double Y5 { get; set; }
+    public double Y7 { get; set; }
+    public double Y10 { get; set; }
+    public double Y15 { get; set; }
+    public double Y20 { get; set; }
+    public double Y25 { get; set; }
+    public double Y30 { get; set; }
+    public double Sum { get; set; }
+}
+
+// This class maps the columns in the CSV file to the properties in the YieldCurve class and inherits from 
+// ClassMap<YieldCurve> where T is the class to map to. A sealed class cannot be inherited.
+sealed class YieldCurveMap : ClassMap<YieldCurve>
+{
+    public YieldCurveMap()
+    {
+        Map(m => m.Date).Name("Date");
+        Map(m => m.Y1).Name("1Y");
+        Map(m => m.Y2).Name("2Y");
+        Map(m => m.Y3).Name("3Y");
+        Map(m => m.Y5).Name("5Y");
+        Map(m => m.Y7).Name("7Y");
+        Map(m => m.Y10).Name("10Y");
+        Map(m => m.Y15).Name("15Y");
+        Map(m => m.Y20).Name("20Y");
+        Map(m => m.Y25).Name("25Y");
+        Map(m => m.Y30).Name("30Y");
+        //Map(m => m.Sum).Name("Sum");
+    }
+}
+
 
 // When one calls "dotnet run" the main program is started. Where void means nothing 
 // is returned (alternative in case one wants something returned -> int etc.)
@@ -25,9 +69,17 @@ class Program
         curves["eur"] = LoadMarketData("eur_swap_curve.txt");
         curves["usd"] = LoadMarketData("usd_swap_curve.txt");
         
+        // Function to read yield curve data from a CSV file
+        using var reader = new StreamReader("dummy_yield_curves_20y_monthly.csv");
+        using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
+        csv.Context.RegisterClassMap<YieldCurveMap>();
+        var yieldCurvesRaw = csv.GetRecords<YieldCurve>();
+        var yieldCurves    = yieldCurvesRaw.ToList();  
+
         // Thereafter the methode to calculate the zero curve is called
         BuildZeroCurve(curves["eur"]);
         BuildZeroCurve(curves["usd"]);
+        BuildZeroCurveHistorical(yieldCurves);
 
         // Call interpolation routine
         //var targetMaturities = new List<double> {0.25, 0.5, 1, 2, 3, 4, 5, 7, 10, 15, 20, 30 };
@@ -113,6 +165,23 @@ class Program
             inst.DiscountFactor = double.Parse(df.ToString(CultureInfo.InvariantCulture), CultureInfo.InvariantCulture);
             inst.ZeroRate = double.Parse(zero.ToString(CultureInfo.InvariantCulture), CultureInfo.InvariantCulture);
         }
+
+    }
+
+static void BuildZeroCurveHistorical(List<YieldCurve> YieldCurveMap)
+    {
+        var zeroRates = new Dictionary<double, double>();
+        var discountFactors = new Dictionary<double, double>();
+
+        foreach (var curve in YieldCurveMap)
+                {
+                    DateTime date = curve.Date; 
+                    double Y1 = curve.Y1;
+                    double Y2 = curve.Y2;
+                      
+                    // Store the zero rates in the instrument for potential further use
+                    curve.Sum = Y1 + Y2;
+                }
 
     }
 

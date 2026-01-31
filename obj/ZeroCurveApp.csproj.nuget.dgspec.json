@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\frank\\OneDrive\\C#\\yieldcurveproject\\ZeroCurveApp\\ZeroCurveApp.csproj": {}
+    "c:\\Users\\frank\\OneDrive\\C#\\yieldcurveproject\\ZeroCurveApp\\ZeroCurveApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\frank\\OneDrive\\C#\\yieldcurveproject\\ZeroCurveApp\\ZeroCurveApp.csproj": {
+    "c:\\Users\\frank\\OneDrive\\C#\\yieldcurveproject\\ZeroCurveApp\\ZeroCurveApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\frank\\OneDrive\\C#\\yieldcurveproject\\ZeroCurveApp\\ZeroCurveApp.csproj",
+        "projectUniqueName": "c:\\Users\\frank\\OneDrive\\C#\\yieldcurveproject\\ZeroCurveApp\\ZeroCurveApp.csproj",
         "projectName": "ZeroCurveApp",
-        "projectPath": "C:\\Users\\frank\\OneDrive\\C#\\yieldcurveproject\\ZeroCurveApp\\ZeroCurveApp.csproj",
+        "projectPath": "c:\\Users\\frank\\OneDrive\\C#\\yieldcurveproject\\ZeroCurveApp\\ZeroCurveApp.csproj",
         "packagesPath": "C:\\Users\\frank\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\frank\\OneDrive\\C#\\yieldcurveproject\\ZeroCurveApp\\obj\\",
+        "outputPath": "c:\\Users\\frank\\OneDrive\\C#\\yieldcurveproject\\ZeroCurveApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\frank\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -44,6 +44,10 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "dependencies": {
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[33.1.0, )"
+            },
             "MathNet.Numerics": {
               "target": "Package",
               "version": "[5.0.0, )"
